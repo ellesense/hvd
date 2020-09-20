@@ -28,8 +28,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 gem 'simple_form'
-gem 'will_paginate-bootstrap4'
 gem 'faker'
+gem 'kaminari'
 gem 'hirb'
 
 group :development, :test do
