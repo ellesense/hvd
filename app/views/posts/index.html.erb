@@ -6,8 +6,8 @@
 
  <div class="form-group">
     <%= form_tag(posts_path, method: :get) do %> 
-      <%= select_tag "category_name", options_from_collection_for_select(@categories, "name", "name", params[:category_name]), class: 'dropdown' %>
-      <button class="btn btn-success btn-sm" type="submit">Search</button>
+      <%= select_tag "category_name", options_from_collection_for_select(@categories, "name", "name", params[:category_name]), class: 'form-control' %>
+      <button class="btn btn-outline-primary btn-sm btn-block" type="submit">Search</button>
     <% end %>
   </div>
 
