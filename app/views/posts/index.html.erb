@@ -1,5 +1,13 @@
 <p id="notice"><%= notice %></p>
 
+ <div class="form-group">
+    <%= form_tag(posts_path, method: :get) do %> 
+      <%= select_tag "category_name", options_from_collection_for_select(@categories, "name", "name", params[:category_name]), class: 'dropdown' %>
+      <button class="btn btn-success btn-sm" type="submit">Search</button>
+    <% end %>
+  </div>
+
+
 <ul class="list-group">
   <% @posts.each do |post| %>
   <li class="list-group-item">

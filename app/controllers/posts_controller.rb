@@ -3,10 +3,18 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.all
+    @categories = Category.all
+    
+    if(params.has_key?(:category_name))
+      category_id = Category.where(name: params[:category_name])
+      @posts = Post.where(category_id: category_id).order(created_at: :desc).page(params[:page])
+    else
+      @posts = Post.order(created_at: :desc).page(params[:page])
+    end
   end
 
   def show
+    @cagetories = Category.all
   end
 
   def new
@@ -57,6 +65,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :description)
+      params.require(:post).permit(:title, :description, :category_id)
     end
 end
