@@ -4,6 +4,7 @@
   <% @posts.each do |post| %>
   <li class="list-group-item">
     <%= link_to post.title, post %>
+  <p>Updated <%= time_ago_in_words(post.updated_at) %> ago</p>
     <div>
       <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning btn-sm' %>
       <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
@@ -11,3 +12,9 @@
   </li>
   <% end %>
 </ul>
+
+<div style="display: flex; justify-content: center;">
+  <%= will_paginate @posts, page_links: false, previous_label: "PREVIOUS",
+  next_label: "NEXT", renderer:
+  WillPaginate::ActionView::BootstrapLinkRenderer %>
+</div>
