@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/my_page', to: 'pages#my_page'
   resources :categories
   devise_for :users
   resources :posts
