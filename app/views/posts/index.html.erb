@@ -11,15 +11,21 @@
     <% end %>
   </div>
 
-<ul class="list-group">
+<ul class="list-group list-group">
   <% @posts.each do |post| %>
   <li class="list-group-item">
     <%= link_to post.title, post %>
+
   <p>Updated <%= time_ago_in_words(post.updated_at) %> ago</p>
-    <div>
-      <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning btn-sm' %>
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
-    </div>
+
+    <% if current_user === post.user %>
+      <div class="btn-group" role="group">
+          <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning btn-sm' %>
+          <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+      </div>
+      <% end %>
+
+      <button class="btn btn-info btn-sm float-right">Bookmark</button>
   </li>
   <% end %>
 </ul>

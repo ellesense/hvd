@@ -1,10 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<div class="btn-group" role="group" aria-label="Basic example">
+<div class="btn-group" role="group">
   <%= link_to 'Back', posts_path, class: 'btn btn-primary btn-sm' %>
-  <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-warning btn-sm" %>
-  <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+  <% if current_user === @post.user %>
+    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-warning btn-sm" %>
+    <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+  <% end %>
 </div>
+<button class="btn btn-info btn-sm float-right">Bookmark</button>
 
 <div class="card">
   <div class="card-body">
