@@ -1,0 +1,16 @@
+  <%= comment.user.nickname %> -  <small> <%= time_ago_in_words(comment.created_at) %> ago</small>
+
+  <p>
+    <%= comment.body %>
+  </p>
+
+  <%= form_for [comment, Comment.new] do |f| %>
+  <div class="form-group">
+    <%= f.text_area :body, placeholder: "Enter here", class: 'form-control' %>
+    <%= f.submit "Reply", class: 'btn btn-primary btn-sm' %>
+  </div>
+  <% end %>
+
+  <ul>
+      <%= render partial: 'comments/comment', collection: comment.comments %>
+  </ul>

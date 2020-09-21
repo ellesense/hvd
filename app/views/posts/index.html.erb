@@ -12,7 +12,7 @@
 <ul class="list-group list-group">
   <% @posts.each do |post| %>
   <li class="list-group-item">
-    <%= link_to post.title, post %>
+    <%= link_to post.title, post %> 💬
 
   <p>Updated <%= time_ago_in_words(post.updated_at) %> ago</p>
 
