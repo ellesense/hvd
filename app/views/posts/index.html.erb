@@ -14,7 +14,7 @@
   <li class="list-group-item">
     <%= link_to post.title, post %> 💬
 
-  <p>Updated <%= time_ago_in_words(post.updated_at) %> ago</p>
+  <p>Updated <%= time_ago_in_words(post.updated_at) %> ago by <%= post.user.nickname %></p>
 
     <% if current_user === post.user %>
       <div class="btn-group" role="group">
