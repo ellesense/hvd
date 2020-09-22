@@ -25,15 +25,3 @@
 
   <hr>
 
-<div class="container">
-    <%= form_for [@post, Comment.new] do |f| %>
-      <div class="form-group">
-        <%= f.text_area :body, placeholder: "Enter here", class: 'form-control' %>
-        <%= f.submit "COMMENT", class: 'btn btn-info btn-sm' %>
-      </div>
-    <% end %>
-
-<hr>
-  <%= render(partial: 'comments/comment', collection: @post.comments.order(created_at: :desc)) %>
-
-</div>

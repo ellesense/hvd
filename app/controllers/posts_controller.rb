@@ -62,6 +62,10 @@ class PostsController < ApplicationController
   private
     def set_post
       @post = Post.find(params[:id])
+
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path, notice: "The post does not exist anymore."
+
     end
 
     def post_params
