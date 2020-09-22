@@ -1,19 +1,19 @@
-<h1>My Page</h1>
+<hr>
+<h2>MY PAGE</h2>
+<hr>
 
-<div class="card">
   <div class="card-body">
     <h5 class="card-title"><%= @user.nickname %></h5>
     <h6 class="card-subtitle mb-2 text-muted"><%= @user.email %></h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <%= link_to 'Edit my information', edit_user_registration_path, class: 'btn btn-primary btn-sm' %>
+    <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
+    <%= link_to 'Edit my information', edit_user_registration_path, class: 'btn btn-warning btn-sm' %>
   </div>
-</div>
 <hr>
 
 <% if @user.posts.length > 1 %>
-  <h3>My events</h3>
+  <h4>My posts</h4>
 <% else %>
-  <h3>My event</h3>
+  <h4>My post</h4>
 <% end %>
 
 <ul class="list-group">
@@ -26,14 +26,4 @@
       <%= link_to post.title, post %>
     </li>
   <% end %>
-</ul>
-
-<hr>
-<h3>Bookmarked Events</h3>
-<ul class="list-group">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
 </ul>

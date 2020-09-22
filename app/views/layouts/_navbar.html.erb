@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to 'HANVANDO', posts_path, class: 'navbar-brand' %>
+  <%= link_to 'Quickmeet', posts_path, class: 'navbar-brand' %>
   <button
     class="navbar-toggler"
     type="button"
@@ -15,30 +15,30 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to 'events', posts_path, class: 'nav-link' %>
+        <%= link_to 'All posts', posts_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'new post', new_post_path, class: 'nav-link' %>
+        <%= link_to 'Create a new post', new_post_path, class: 'nav-link' %>
       </li>
 
       <% if current_user %>
         <li class="nav-item">
-          <%= link_to 'log out', destroy_user_session_path, class: 'nav-link', method: :delete %>
+          <%= link_to 'Log out', destroy_user_session_path, class: 'nav-link', method: :delete %>
         </li>
         <li class="nav-item">
-          <%= link_to 'my page', my_page_path, class: 'nav-link' %>
+          <%= link_to 'My page', my_page_path, class: 'nav-link' %>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to 'JOIN', new_user_registration_path, class: 'nav-link' %>
+          <%= link_to 'Join', new_user_registration_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'LOG IN', user_session_path, class: 'nav-link' %>
+          <%= link_to 'Log in', user_session_path, class: 'nav-link' %>
         </li>
       <% end %>
 
       <li class="nav-item">
-      <span class="nav-link float-right" style="color: black">Today is: <%= Time.now.strftime("%B %d, %Y") %></span>
+      <span class="nav-link float-right" style="color: black">Today is <%= Time.now.strftime("%B %d, %Y") %>.</span>
       </li>
     </ul>
   </div>

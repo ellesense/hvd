@@ -1,5 +1,10 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= link_to "Back", :back, class: 'btn btn-primary btn-sm' %>
 
+<hr>
+
+<h2>Edit My Information</h2>
+
+<hr>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
@@ -26,12 +31,9 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: 'btn btn-primary btn-sm' %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<hr>
+<small>Unhappy? <%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></small><br />

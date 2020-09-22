@@ -1,17 +1,18 @@
 <div class="btn-group" role="group">
-  <%= link_to 'Back', posts_path, class: 'btn btn-primary btn-sm' %>
+  <%= link_to 'BACK', posts_path, class: 'btn btn-primary btn-sm' %>
   <% if current_user === @post.user %>
-    <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-warning btn-sm" %>
-    <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+    <%= link_to 'EDIT', edit_post_path(@post), class: "btn btn-warning btn-sm" %>
+    <%= link_to 'DELETE', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
   <% end %>
 </div>
-<button class="btn btn-info btn-sm float-right">Bookmark</button>
+<%# <button class="btn btn-info btn-sm float-right">내 페이지에 저장</button> %>
 
 <div class="card">
   <div class="card-body">
     <h5 class="card-title"><%= @post.title %></h5>
     <p class="card-subtitle mb-2 text-muted">
-      By <%= @post.user.nickname %> on <%= @post.created_at.strftime("%B %d, %Y") %>
+      By <%= @post.user.nickname %> | 
+      <%= @post.created_at.strftime("%B %d, %Y") %>
     </p>
     <p class="card-text">
       <%= @post.description %>
@@ -28,7 +29,7 @@
     <%= form_for [@post, Comment.new] do |f| %>
       <div class="form-group">
         <%= f.text_area :body, placeholder: "Enter here", class: 'form-control' %>
-        <%= f.submit "Add a Comment", class: 'btn btn-primary btn-sm' %>
+        <%= f.submit "COMMENT", class: 'btn btn-info btn-sm' %>
       </div>
     <% end %>
 
