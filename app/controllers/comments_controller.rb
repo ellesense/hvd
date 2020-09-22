@@ -11,6 +11,7 @@ def create
     @comment.user = current_user
 
     if @comment.save
+        UserMailer.with(comment: @comment).comment_email.deliver_now
         redirect_back(fallback_location: root_path)
      else
     redirect_back(fallback_location: root_path)

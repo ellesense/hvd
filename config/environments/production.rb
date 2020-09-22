@@ -60,7 +60,24 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "hanvando_production"
 
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'https://aqueous-sea-50133.herokuapp.com/' }
   config.action_mailer.perform_caching = false
+  config.action_mailer.perform_deliveries = true 
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+     :address => "smtp.gmail.com",
+     :port => 587,
+     :domain => "gmail.com",
+     :authentication => 'plain',
+     :user_name => ENV["GMAIL_USERNAME"],
+     :password => ENV["GMAIL_PASSWORD"],
+     :enable_starttls_auto => true
+  }
+  
+
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
