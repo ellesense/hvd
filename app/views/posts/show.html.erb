@@ -14,9 +14,12 @@
       By <%= @post.user.nickname %> | 
       <%= @post.created_at.strftime("%B %d, %Y") %>
     </p>
+
+<div style="margin-bottom: 80px">
     <p class="card-text">
       <%= @post.description %>
     </p>
+</div>
 
     <p class="card-subtitle mb-2 text-muted">
       Updated <%= time_ago_in_words(@post.updated_at) %> ago
