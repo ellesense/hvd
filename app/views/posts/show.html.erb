@@ -21,7 +21,49 @@
     <p class="card-subtitle mb-2 text-muted">
       Updated <%= time_ago_in_words(@post.updated_at) %> ago
     </p>
+
+      <hr>
+
+      <%# Group Chat Links %>
+      <h6>Group Chat Links</h6>
+      <div style="margin-bottom: 3px;">
+        <% if !@post.telegram.empty? %>
+          <%= link_to "#{@post.telegram}", class: 'btn btn-primary btn-sm' do %>
+            Join Group Chat Now - <i class="fab fa-telegram fa-lg"></i> (Telegram)
+          <% end %>
+        <% end %>
+      </div>
+
+      <div style="margin-bottom: 3px;">
+      <% if !@post.whatsapp.empty? %>
+        <%= link_to "#{@post.whatsapp}", class: 'btn btn-primary btn-sm' do %>
+          Join Group Chat Now - <i class="fab fa-whatsapp fa-lg"></i> (Whatsapp)
+        <% end %>
+      <% end %>
+      </div>
+
+      <div style="margin-bottom: 3px;">
+      <% if !@post.discord.empty? %>
+        <%= link_to "#{@post.discord}", class: 'btn btn-primary btn-sm' do %>
+          Join Group Chat Now - <i class="fab fa-discord fa-lg"></i> (Discord)
+        <% end %>
+      <% end %>
+      </div>
+
+      <div style="margin-bottom: 3px;">
+      <% if !@post.slack.empty? %>
+        <%= link_to "#{@post.slack}", class: 'btn btn-primary btn-sm' do %> 
+          Join Group Chat Now - <i class="fab fa-slack fa-lg"></i> (Slack)
+        <% end %>
+      <% end %>
+      </div>
+
+      <div style="margin-bottom: 3px;">
+      <% if !@post.others.empty? %>
+        <%= link_to "#{@post.others}", class: 'btn btn-primary btn-sm' do %> 
+          Join Group Chat Now - <i class="fas fa-comments fa-lg"></i> (Other)
+        <% end %>
+      <% end %>
+      </div>      
   </div>
-
-  <hr>
-
+</div>

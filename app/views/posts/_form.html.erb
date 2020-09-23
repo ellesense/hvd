@@ -12,12 +12,34 @@
 
   <div class="form-group">
     <%= f.label :title, "Title*" %>
-    <%= f.text_field :title, class: "form-control" %>
+    <%= f.text_field :title, class: "form-control", autofocus: true, placeholder: 'Enter here' %>
+  </div>
+
+<%# Enter Group Chat Links %>
+  <div class="form-group">
+    <%= f.label :telegram, "Telegram Group Chat Link" %>
+    <%= f.text_field :telegram, class: "form-control", placeholder: 'http:// or https:// is required' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :whatsapp, "Whatsapp Group Chat Link" %>
+    <%= f.text_field :whatsapp, class: "form-control", placeholder: 'http:// or https:// is required' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :discord, "Discord Group Chat Link" %>
+    <%= f.text_field :discord, class: "form-control", placeholder: 'http:// or https:// is required' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Slack, "Slack Group Chat Link" %>
+    <%= f.text_field :slack, class: "form-control", placeholder: 'http:// or https:// is required' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :others, "Other Group Chat Link" %>
+    <%= f.text_field :others, class: "form-control", placeholder: 'http:// or https:// is required' %>
   </div>
 
   <div class="form-group">
     <%= f.label :description, "Description*" %>
-    <%= f.rich_text_area :description %>
+    <%= f.rich_text_area :description, placeholder: 'Enter here'  %>
   </div>
 
   <%= f.submit "Post", class: "btn btn-primary btn-sm" %>

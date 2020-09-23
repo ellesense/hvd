@@ -2,6 +2,7 @@
   <%= paginate @posts %>
 </div>
 
+<%# Filter By a Category %>
  <div class="form-group">
     <%= form_tag(posts_path, method: :get) do %> 
       <%= select_tag "category_name", options_from_collection_for_select(@categories, "name", "name", params[:category_name]), class: 'form-control' %>
@@ -9,21 +10,45 @@
     <% end %>
   </div>
 
+<%# List of Posts %>
 <ul class="list-group list-group">
   <% @posts.each do |post| %>
   <li class="list-group-item">
-    <%= link_to post.title, post %> 
+    <%= link_to post.title, post %>
 
-  <p>Updated <%= time_ago_in_words(post.updated_at) %> ago by <%= post.user.nickname %></p>
+    <p>Updated <%= time_ago_in_words(post.updated_at) %> ago by <%= post.user.nickname %></p>
 
+    <%# Edit & Delete Buttons %>
     <% if current_user === post.user %>
       <div class="btn-group" role="group">
           <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning btn-sm' %>
           <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
       </div>
-      <% end %>
+    <% end %>
 
-      <%# <button class="btn btn-info btn-sm float-right">저장</button> %>
+    <%# Avilable Group Link Icons %>
+    <div class="float-right">
+    <% if !post.telegram.empty? %>
+      <i class="fab fa-telegram fa-lg"></i>
+    <% end %>
+
+    <% if !post.whatsapp.empty? %>    
+      <i class="fab fa-whatsapp fa-lg"></i>
+    <% end %>
+
+    <% if !post.discord.empty? %>
+      <i class="fab fa-discord fa-lg"></i>
+    <% end %>
+
+    <% if !post.slack.empty? %>
+      <i class="fab fa-slack fa-lg"></i>
+    <% end %>
+
+    <% if !post.others.empty? %>
+      <i class="fas fa-comments fa-lg"></i>
+    <% end %>
+    </div>
+
   </li>
   <% end %>
 </ul>

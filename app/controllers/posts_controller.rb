@@ -69,6 +69,14 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :description, :category_id)
+      params.require(:post).permit(
+        :title, 
+        :description, 
+        :category_id, 
+        :telegram, 
+        :whatsapp, 
+        :discord, 
+        :slack, 
+        :others)
     end
 end
