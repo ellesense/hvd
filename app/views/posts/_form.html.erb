@@ -1,4 +1,4 @@
-<small>*: Required</small>
+<small>*: 필수</small>
 
 <p class="errors">
   <%= @post.errors.full_messages.first if @post.errors.any? %>
@@ -6,41 +6,41 @@
 
 <%= form_with(model: post, local: true) do |f| %>
   <div class="form-group">
-    <%= f.label :category, "Categories*" %>
-    <%= f.collection_select(:category_id, Category.all, :id, :name, {:prompt => 'Select'}, {:class => "form-control"}) %>
+    <%= f.label :category, "카테고리*" %>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {:prompt => '-'}, {:class => "form-control"}) %>
   </div>
 
   <div class="form-group">
-    <%= f.label :title, "Title*" %>
-    <%= f.text_field :title, class: "form-control", autofocus: true, placeholder: 'Enter here' %>
+    <%= f.label :title, "제목*" %>
+    <%= f.text_field :title, class: "form-control", autofocus: true, placeholder: '...' %>
   </div>
 
 <%# Enter Group Chat Links %>
   <div class="form-group">
+    <%= f.label :others, "KakaoTalk Group Chat Link" %>
+    <%= f.text_field :others, class: "form-control", placeholder: 'http:// 혹은 https:// 를 포함시켜 주세요' %>
+  </div>
+  <div class="form-group">
     <%= f.label :telegram, "Telegram Group Chat Link" %>
-    <%= f.text_field :telegram, class: "form-control", placeholder: 'http:// or https:// is required' %>
+    <%= f.text_field :telegram, class: "form-control", placeholder: 'http:// 혹은 https:// 를 포함시켜 주세요' %>
   </div>
   <div class="form-group">
     <%= f.label :whatsapp, "Whatsapp Group Chat Link" %>
-    <%= f.text_field :whatsapp, class: "form-control", placeholder: 'http:// or https:// is required' %>
+    <%= f.text_field :whatsapp, class: "form-control", placeholder: 'http:// 혹은 https:// 를 포함시켜 주세요' %>
   </div>
   <div class="form-group">
     <%= f.label :discord, "Discord Group Chat Link" %>
-    <%= f.text_field :discord, class: "form-control", placeholder: 'http:// or https:// is required' %>
+    <%= f.text_field :discord, class: "form-control", placeholder: 'http:// 혹은 https:// 를 포함시켜 주세요' %>
   </div>
   <div class="form-group">
     <%= f.label :Slack, "Slack Group Chat Link" %>
-    <%= f.text_field :slack, class: "form-control", placeholder: 'http:// or https:// is required' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :others, "Other Group Chat Link" %>
-    <%= f.text_field :others, class: "form-control", placeholder: 'http:// or https:// is required' %>
+    <%= f.text_field :slack, class: "form-control", placeholder: 'http:// 혹은 https:// 를 포함시켜 주세요' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :description, "Description*" %>
-    <%= f.rich_text_area :description, placeholder: 'Enter here'  %>
+    <%= f.label :description, "내용*" %>
+    <%= f.rich_text_area :description, placeholder: '...'  %>
   </div>
 
-  <%= f.submit "Post", class: "btn btn-primary btn-sm" %>
+  <%= f.submit "작성", class: "btn btn-primary btn-sm" %>
 <% end %>

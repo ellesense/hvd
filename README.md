@@ -1,24 +1,11 @@
-# README
+Group chat (mainly KakaoTalk) based Meet ups
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TO DO:
 
-Things you may want to cover:
+Add LOCATIONS column
+Ability to filter by locations
 
-* Ruby version
+Add seperate pages for each categories
+Show these categories below navbar
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Add friendly_id as slug

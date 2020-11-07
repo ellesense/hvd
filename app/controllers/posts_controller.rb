@@ -70,13 +70,14 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(
-        :title, 
+        :title,
         :description, 
         :category_id, 
         :telegram, 
         :whatsapp, 
         :discord, 
         :slack, 
-        :others)
+        :others,
+        :location_id => [])
     end
 end
