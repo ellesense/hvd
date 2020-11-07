@@ -5,7 +5,10 @@ TO DO:
 Add LOCATIONS column
 Ability to filter by locations
 
-Add seperate pages for each categories
-Show these categories below navbar
-
 Add friendly_id as slug
+
+Koreanify
+
+- paginate
+- "Updated x ago"
+- Join & Log in pages

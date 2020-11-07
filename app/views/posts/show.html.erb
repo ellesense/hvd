@@ -28,9 +28,9 @@
       <hr>
 
       <%# Group Chat Links %>
-      <h6>그룹 챗 링크</h6>
+      <h6>그룹 챗 링크</h6>      
       <div style="margin-bottom: 3px;">
-      <% if !@post.others.empty? %>
+      <% if !@post.others.blank? %>
         <%= link_to "#{@post.others}", class: 'btn btn-primary btn-sm' do %> 
           <i class="fas fa-comments fa-lg" aria-hidden="true"></i> (Other)
         <% end %>
@@ -38,7 +38,7 @@
       </div>      
 
       <div style="margin-bottom: 3px;">
-        <% if !@post.telegram.empty? %>
+        <% if !@post.telegram.blank? %>
           <%= link_to "#{@post.telegram}", class: 'btn btn-primary btn-sm' do %>
             <i class="fab fa-telegram fa-lg" aria-hidden="true"></i> (Telegram)
           <% end %>
@@ -46,7 +46,7 @@
       </div>
 
       <div style="margin-bottom: 3px;">
-      <% if !@post.whatsapp.empty? %>
+      <% if !@post.whatsapp.blank? %>
         <%= link_to "#{@post.whatsapp}", class: 'btn btn-primary btn-sm' do %>
           <i class="fab fa-whatsapp fa-lg" aria-hidden="true"></i> (Whatsapp)
         <% end %>
@@ -54,7 +54,7 @@
       </div>
 
       <div style="margin-bottom: 3px;">
-      <% if !@post.discord.empty? %>
+      <% if !@post.discord.blank? %>
         <%= link_to "#{@post.discord}", class: 'btn btn-primary btn-sm' do %>
           <i class="fab fa-discord fa-lg" aria-hidden="true"></i> (Discord)
         <% end %>
@@ -62,7 +62,7 @@
       </div>
 
       <div style="margin-bottom: 3px;">
-      <% if !@post.slack.empty? %>
+      <% if !@post.slack.blank? %>
         <%= link_to "#{@post.slack}", class: 'btn btn-primary btn-sm' do %> 
           <i class="fab fa-slack fa-lg" aria-hidden="true"></i> (Slack)
         <% end %>

@@ -9,5 +9,5 @@ class Post < ApplicationRecord
     validates :title, length: { minimum: 5 }
     validates :description, length: { minimum: 10 }, presence: true
 
-    paginates_per 5
+    paginates_per 50
 end

@@ -5,7 +5,7 @@
 <%# Filter By a Category %>
  <div class="form-group">
     <%= form_tag(posts_path, method: :get) do %> 
-      <%= select_tag "category_name", options_from_collection_for_select(@categories, "name", "name", params[:category_name]), class: 'form-control' %>
+      <%= select_tag "category_name", options_from_collection_for_select(@categories.order("name ASC"), "name", "name", params[:category_name]), class: 'form-control' %>
       <button class="btn btn-primary btn-sm btn-block" type="submit">필터</button>
     <% end %>
   </div>
@@ -28,37 +28,39 @@
 
     <%# Avilable Group Link Icons %>
     <div class="float-right">
-    <% if !post.telegram.empty? %>
+
+
+    
+    <% if !post.telegram.blank? %>
       <%= link_to "#{post.telegram}" do %>
         <i class="fab fa-telegram fa-lg" style="margin: 0 6px"></i>
       <% end %>
     <% end %>
 
-    <% if !post.whatsapp.empty? %>    
+    <% if !post.whatsapp.blank? %>    
       <%= link_to "#{post.whatsapp}" do %>
         <i class="fab fa-whatsapp fa-lg" style="margin: 0 6px"></i>
       <% end %>
     <% end %>
 
-    <% if !post.discord.empty? %>
+    <% if !post.discord.blank? %>
       <%= link_to "#{post.discord}" do %>
         <i class="fab fa-discord fa-lg" style="margin: 0 6px"></i>
       <% end %>
     <% end %>
 
-    <% if !post.slack.empty? %>
+    <% if !post.slack.blank? %>
       <%= link_to "#{post.slack}" do %>
         <i class="fab fa-slack fa-lg" style="margin: 0 6px"></i>
       <% end %>
     <% end %>
 
-    <% if !post.others.empty? %>
+    <% if !post.others.blank? %>
       <%= link_to "#{post.others}" do %>
         <i class="fas fa-comments fa-lg" style="margin: 0 6px"></i>
       <% end %>
     <% end %>
     </div>
-
   </li>
   <% end %>
 </ul>
