@@ -14,7 +14,7 @@
       작성자: <%= @post.user.nickname %>
     </p>
     <p class="card-subtitle mb-2 text-muted">
-      <%= @post.created_at.strftime("%m. %d. %Y. %l:%M %p") %>
+      <%= @post.created_at.getlocal.strftime("%m. %d. %Y. %l:%M %p") %>
     </p>
 
 <div style="margin-bottom: 80px">
@@ -30,7 +30,7 @@
       <div style="margin-bottom: 3px;">
       <% if !@post.others.blank? %>
         <%= link_to "#{@post.others}", class: 'btn btn-primary btn-md' do %> 
-          <i class="fas fa-comments fa-lg" aria-hidden="true"></i> (Other)
+          <i class="fas fa-comments fa-lg" aria-hidden="true"></i> (카카오톡)
         <% end %>
       <% end %>
       </div>      
@@ -38,7 +38,7 @@
       <div style="margin-bottom: 3px;">
         <% if !@post.telegram.blank? %>
           <%= link_to "#{@post.telegram}", class: 'btn btn-primary btn-md' do %>
-            <i class="fab fa-telegram fa-lg" aria-hidden="true"></i> (Telegram)
+            <i class="fab fa-telegram fa-lg" aria-hidden="true"></i> (텔레그램)
           <% end %>
         <% end %>
       </div>
@@ -46,7 +46,7 @@
       <div style="margin-bottom: 3px;">
       <% if !@post.whatsapp.blank? %>
         <%= link_to "#{@post.whatsapp}", class: 'btn btn-primary btn-md' do %>
-          <i class="fab fa-whatsapp fa-lg" aria-hidden="true"></i> (Whatsapp)
+          <i class="fab fa-whatsapp fa-lg" aria-hidden="true"></i> (왓츠앱)
         <% end %>
       <% end %>
       </div>
@@ -54,7 +54,7 @@
       <div style="margin-bottom: 3px;">
       <% if !@post.discord.blank? %>
         <%= link_to "#{@post.discord}", class: 'btn btn-primary btn-md' do %>
-          <i class="fab fa-discord fa-lg" aria-hidden="true"></i> (Discord)
+          <i class="fab fa-discord fa-lg" aria-hidden="true"></i> (디스코드)
         <% end %>
       <% end %>
       </div>
@@ -62,7 +62,7 @@
       <div style="margin-bottom: 3px;">
       <% if !@post.slack.blank? %>
         <%= link_to "#{@post.slack}", class: 'btn btn-primary btn-md' do %> 
-          <i class="fab fa-slack fa-lg" aria-hidden="true"></i> (Slack)
+          <i class="fab fa-slack fa-lg" aria-hidden="true"></i> (슬랙)
         <% end %>
       <% end %>
       </div>

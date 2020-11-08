@@ -8,5 +8,6 @@ class PagesController < ApplicationController
   end
 
   def not_found
+    redirect_to root_path, notice: "해당 페이지는 존재하지 않거나 찾을 수 없습니다."
   end
 end

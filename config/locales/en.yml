@@ -30,7 +30,40 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  views:
+  errors:
+    format: "%{message}"
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            category:
+              required: "카테고리는 필수 항목입니다."
+            title:
+              required: "제목은 필수 항목 입니다."
+              too_short: "제목은 최소 2글자로 작성해주세요."
+              too_long: "제목은 최대 40글자로 작성해주세요."
+            description:
+              blank: "내용은 필수 항목입니다."
+              required: "내용은 필수 항목입니다."
+              too_short: "내용은 최소 10글자로 작성해주세요."
+        user:
+          attributes:
+            nickname:
+              required: "닉네임은 필수 항목입니다."
+              taken: "이미 등록 되어있는 닉네임 입니다."
+              blank: "닉네임을 필수 항목입니다."
+            email:
+              required: "이메일은 필수 항목입니다."
+              taken: "이미 등록 되어있는 이메일입니다."
+              blank: "이메일은 필수 항목입니다."
+              invalid: "예) example@example.com"
+            password:
+              too_short: "비밀번호가 너무 짧습니다."
+              blank: "비밀번호는 필수 항목입니다."
+            password_confirmation:
+              confirmation: "비밀번호를 한번 더 입력해주세요."
+    views:
     pagination:
       first: "처음으로"
       previous: "<"

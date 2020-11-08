@@ -1,11 +1,8 @@
-Group chat (mainly KakaoTalk) based Meet ups
+Change NOT FOUND page to something else
 
-TO DO:
+Send sign up confirmation email
+
 Add LOCATIONS column
 Ability to filter by locations
-
-Add friendly_id as slug
-
-Resolve timezone issue
 
 Design brand logo

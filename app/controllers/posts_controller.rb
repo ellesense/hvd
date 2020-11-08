@@ -68,7 +68,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
 
     rescue ActiveRecord::RecordNotFound
-      redirect_to root_path, notice: "해당 글은 더이상 존재하지 않습니다."
+      redirect_to root_path, notice: "해당 글이 존재하지 않습니다."
 
     end
 

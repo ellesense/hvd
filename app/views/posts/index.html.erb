@@ -16,7 +16,7 @@
   <li class="list-group-item">
     <%= link_to post.title, post %>
 
-    <p style="margin-top: 5px"><%= post.created_at.strftime("%m. %d. %Y. %l:%M %p") %></p>
+    <p style="margin-top: 5px"><%= post.created_at.getlocal.strftime("%m. %d. %Y. %l:%M %p") %></p>
     
 
     <%# Edit & Delete Buttons %>
