@@ -1,11 +1,12 @@
-<h2>Resend confirmation instructions</h2>
+<h2>가입 완료를 위한 이메일을 못 받으셨나요?</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
   <%= f.full_error :confirmation_token %>
 
   <div class="form-inputs">
-    <%= f.input :email,
+    <%= f.input :email, 
+                label: "이메일",
                 required: true,
                 autofocus: true,
                 value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
@@ -13,8 +14,9 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Resend confirmation instructions" %>
+    <%= f.button :submit, "가입 완료 이메일 다시 보내기", class: 'btn btn-primary btn-md' %>
   </div>
 <% end %>
 
+<hr>
 <%= render "devise/shared/links" %>

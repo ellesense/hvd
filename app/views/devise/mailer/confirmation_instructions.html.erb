@@ -1,5 +1,12 @@
-<p>Welcome <%= @email %>!</p>
+<a href="https://www.hanvando.ca" style="text-decoration: none; color: black"><h2>HANVANDO</h2></a>
 
-<p>You can confirm your account email through the link below:</p>
+<p>HANVANDO에 가입해 주셔서 감사합니다.</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>밑의 링크를 통해서 가입을 완료해주세요.:</p>
+
+<p><%= link_to '가입 완료', confirmation_url(@resource, confirmation_token: @token) %></p>
+
+<hr>
+
+<small>만일 가입을 원하시 않으셨으면, 이 이메일을 무시하셔도 좋습니다. 가입 완료를 하기 전까지는 가입이 되지 않습니다.</small>
+<small>hanvando.no-reply@gmali.com 으로 보내지는 메일은 읽히지 않습니다.</small>
