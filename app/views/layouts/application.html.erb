@@ -17,10 +17,19 @@
   <%= render 'layouts/navbar' %>
 
   <div class="container" style="margin-bottom: 50px">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
+  
+  <% unless notice.nil? %>
+    <p class="notice" style="color: blue; margin-top: 10px"><%= notice %></p>
+  <% end %>
+
+  <% unless alert.nil? %>
+    <p class="alert" style="color: red; margin-top: 10px"><%= alert %></p>
+  <% end %>
+
+  <div style="margin-top: 50px">
     <%= yield %>
+  </div>
+
   </div>
   </body>
 </html>

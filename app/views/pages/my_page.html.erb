@@ -1,27 +1,27 @@
 <hr>
-<h2>MY PAGE</h2>
+<h2>내 페이지</h2>
 <hr>
 
   <div class="card-body">
     <h5 class="card-title"><%= @user.nickname %></h5>
     <h6 class="card-subtitle mb-2 text-muted"><%= @user.email %></h6>
     <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
-    <%= link_to 'Edit my information', edit_user_registration_path, class: 'btn btn-warning btn-sm' %>
+    <%= link_to '내 정보 수정', edit_user_registration_path, class: 'btn btn-warning btn-md' %>
   </div>
 <hr>
 
 <% if @user.posts.length > 1 %>
-  <h4>My posts</h4>
+  <h4>내 글</h4>
 <% else %>
-  <h4>My post</h4>
+  <h4>내 글</h4>
 <% end %>
 
 <ul class="list-group list-group-flush">
   <% @user.posts.each do |post| %>
     <li class="list-group-item">
       <div class="btn-group" role="group">
-          <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-warning btn-sm' %>
-          <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+          <%= link_to '수정', edit_post_path(post), class: 'btn btn-warning btn-md' %>
+          <%= link_to '삭제', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-md' %>
       </div>
       <%= link_to post.title, post %>
     </li>

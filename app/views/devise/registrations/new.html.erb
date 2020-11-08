@@ -1,4 +1,4 @@
-<h2>Join</h2>
+<h2>가입</h2>
 
 <%= render "devise/shared/links" %>
 
@@ -7,25 +7,25 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nickname,
+    <%= f.input :nickname, label: '닉네임',
                 required: true, 
                 autofocus: true, 
-                hint: ("This will be displayed as your name")
+                hint: ("")
                  %>
-    <%= f.input :email,
+    <%= f.input :email, label: '이메일',
                 required: true,
-                hint: ("You will be notified via email when someone comments on your post."),
+                hint: ("로그인할때 사용 하실 이메일주소를 입력해주세요."),
                 input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
+    <%= f.input :password, label: '비밀번호',
                 required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                hint: ("#{@minimum_password_length}자 이상 입력해주세요." if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+    <%= f.input :password_confirmation, label: '비밀번호 재입력',
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Join", class: 'btn btn-primary btn-sm btn-block' %>
+    <%= f.button :submit, "가입", class: 'btn btn-primary btn-md btn-block' %>
   </div>
 <% end %>

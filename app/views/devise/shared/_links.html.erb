@@ -1,17 +1,17 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Already a member? Log in here.", new_session_path(resource_name), class: 'btn btn-outline-primary btn-sm' %><br />
+  <%= link_to "이미 가입 하셨나요? 이곳을 눌러 로그인 해주세요.", new_session_path(resource_name), class: 'btn btn-outline-primary btn-md' %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Not a member yet? Join here.", new_registration_path(resource_name), class: 'btn btn-outline-primary btn-sm' %><br />
+  <%= link_to "처음이세요? 이곳을 눌러 가입해주세요.", new_registration_path(resource_name), class: 'btn btn-outline-primary btn-md' %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), class: 'btn btn-light btn-sm' %><br />
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), class: 'btn btn-light btn-md' %><br />
 <% end %>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name), class: 'btn btn-light btn-sm' %><br />
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name), class: 'btn btn-light btn-md' %><br />
 <% end %>
 
 <%- if devise_mapping.omniauthable? %>

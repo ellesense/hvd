@@ -17,23 +17,23 @@
 
 <%# Enter Group Chat Links %>
   <div class="form-group">
-    <%= f.label :others, "KakaoTalk Group Chat Link" %>
+    <%= f.label :others, "카카오톡 링크" %>
     <%= f.text_field :others, class: "form-control", placeholder: 'http:// 혹은 https:// 를 포함시켜 주세요' %>
   </div>
   <div class="form-group">
-    <%= f.label :telegram, "Telegram Group Chat Link" %>
+    <%= f.label :telegram, "텔레그램 링크" %>
     <%= f.text_field :telegram, class: "form-control", placeholder: 'http:// 혹은 https:// 를 포함시켜 주세요' %>
   </div>
   <div class="form-group">
-    <%= f.label :whatsapp, "Whatsapp Group Chat Link" %>
+    <%= f.label :whatsapp, "왓츠앱 링크" %>
     <%= f.text_field :whatsapp, class: "form-control", placeholder: 'http:// 혹은 https:// 를 포함시켜 주세요' %>
   </div>
   <div class="form-group">
-    <%= f.label :discord, "Discord Group Chat Link" %>
+    <%= f.label :discord, "디스코드 링크" %>
     <%= f.text_field :discord, class: "form-control", placeholder: 'http:// 혹은 https:// 를 포함시켜 주세요' %>
   </div>
   <div class="form-group">
-    <%= f.label :Slack, "Slack Group Chat Link" %>
+    <%= f.label :Slack, "슬랙 링크" %>
     <%= f.text_field :slack, class: "form-control", placeholder: 'http:// 혹은 https:// 를 포함시켜 주세요' %>
   </div>
 
@@ -42,5 +42,5 @@
     <%= f.rich_text_area :description, placeholder: '...'  %>
   </div>
 
-  <%= f.submit "작성", class: "btn btn-primary btn-sm" %>
+  <%= f.submit "작성", class: "btn btn-primary btn-md" %>
 <% end %>
