@@ -7,3 +7,5 @@ Ability to filter by locations
 Add friendly_id as slug
 
 Resolve timezone issue
+
+Design brand logo

@@ -23,6 +23,9 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if current_user != @post.user
+      redirect_to root_path, notice: "권한이 없습니다."
+    end
   end
 
   def create

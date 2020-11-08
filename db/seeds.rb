@@ -29,19 +29,19 @@ Category.create(name: 'Online Games')
 # 이벤트 
 Category.create(name: 'Gigs & Events')
 
-10.times do |i|
-    User.create(
-        email: Faker::Internet.email, 
-        password: '1234567',
-        nickname: Faker::Name.name
-    )
-end
+# 10.times do |i|
+#     User.create(
+#         email: Faker::Internet.email, 
+#         password: '1234567',
+#         nickname: Faker::Name.name
+#     )
+# end
 
-100.times do |i|
-    Post.create(
-        title: Faker::Games::WorldOfWarcraft.quote, 
-        description: Faker::Lorem.paragraph(sentence_count: 4), 
-        user_id: rand(1..10),
-        category_id: rand(1..8)
-    )
-end
+# 100.times do |i|
+#     Post.create(
+#         title: Faker::Games::WorldOfWarcraft.quote, 
+#         description: Faker::Lorem.paragraph(sentence_count: 4), 
+#         user_id: rand(1..10),
+#         category_id: rand(1..8)
+#     )
+# end
