@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :posts
   has_many :comments
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, length: { minimum: 2, maximum: 10 }, presence: true, uniqueness: true
   validate :reserved_words
 
   def reserved_words

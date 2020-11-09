@@ -53,6 +53,8 @@ en:
               required: "닉네임은 필수 항목입니다."
               taken: "이미 등록 되어있는 닉네임 입니다."
               blank: "닉네임을 필수 항목입니다."
+              too_short: "닉네임은 최소 2글자로 작성해주세요."
+              too_long: "닉네임은 최대 10글자로 작성해주세요"
             email:
               required: "이메일은 필수 항목입니다."
               taken: "이미 등록 되어있는 이메일입니다."
@@ -63,6 +65,8 @@ en:
               blank: "비밀번호는 필수 항목입니다."
             password_confirmation:
               confirmation: "비밀번호를 한번 더 입력해주세요."
+            current_password:
+              blank: "현재 사용하고 계시는 비밀번호를 입력해주세요."
     views:
     pagination:
       first: "처음으로"

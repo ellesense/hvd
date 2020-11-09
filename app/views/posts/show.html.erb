@@ -1,7 +1,7 @@
 <div class="btn-group" role="group">
   <%= link_to '모든 글 보기', posts_path, class: 'btn btn-primary btn-md' %>
   <% if current_user === @post.user %>
-    <%= link_to '수정', edit_post_path(@post), class: "btn btn-warning btn-md" %>
+    <%= link_to '수정', edit_post_path(@post), class: "btn btn-info btn-md" %>
     <%= link_to '삭제', @post, method: :delete, data: { confirm: '삭제된 글은 복구가 되지 않습니다. 계속 하시겠습니까?' }, class: 'btn btn-danger btn-md' %>
   <% end %>
 </div>

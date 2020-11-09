@@ -1,29 +1,33 @@
-<hr>
-<h2>내 페이지</h2>
+<h1>내 정보</h1>
 <hr>
 
   <div class="card-body">
     <h5 class="card-title"><%= @user.nickname %></h5>
     <h6 class="card-subtitle mb-2 text-muted"><%= @user.email %></h6>
-    <%# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> %>
+    <hr>
+    <p class="card-text">가입 날짜: <%= @user.created_at.getlocal.strftime("%m. %d. %Y.") %></p>
+    <p class="card-text">정보 수정한 날짜: <%= @user.updated_at.getlocal.strftime("%m. %d. %Y.") %></p>
     <%= link_to '내 정보 수정', edit_user_registration_path, class: 'btn btn-warning btn-md' %>
   </div>
 <hr>
 
 <% if @user.posts.length > 1 %>
-  <h4>내 글</h4>
+  <h4>내가 작성한 글 들</h4>
 <% else %>
-  <h4>내 글</h4>
+  <h4>내가 작성한 글</h4>
 <% end %>
 
 <ul class="list-group list-group-flush">
   <% @user.posts.each do |post| %>
     <li class="list-group-item">
       <div class="btn-group" role="group">
-          <%= link_to '수정', edit_post_path(post), class: 'btn btn-warning btn-md' %>
-          <%= link_to '삭제', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-md' %>
+          <%= link_to '수정', edit_post_path(post), class: 'btn btn-info btn-sm' %>
+          <%= link_to '삭제', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
       </div>
+      <div>
+      <%= post.created_at.getlocal.strftime("%m. %d. %Y. %l:%M %p") %>
       <%= link_to post.title, post %>
+      </div>
     </li>
   <% end %>
 </ul>
