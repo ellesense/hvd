@@ -1,8 +1,6 @@
-Change NOT FOUND page to something else
-
 Add LOCATIONS column
 Ability to filter by locations
 
-Confirmation Instruction Email - Koreanify
-
 Can change email address later
+이용약관 (가입시 동의 하게 끔)
+다크모드

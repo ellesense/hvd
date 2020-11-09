@@ -9,7 +9,7 @@ en:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "가입하실 수 없습니다. 하단의 메세지를 봐주세요."
+      default_message: "하단의 메세지를 봐주세요."
     # Examples
     # labels:
     #   defaults:
