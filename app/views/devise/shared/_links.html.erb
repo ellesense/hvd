@@ -1,3 +1,4 @@
+
 <%- if controller_name != 'sessions' %>
   <%= link_to "이미 가입 하셨나요? 이곳을 눌러 로그인 해주세요.", new_session_path(resource_name), class: 'btn btn-outline-primary btn-md' %><br />
 <% end %>
@@ -7,7 +8,7 @@
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "가입 완료를 위한 이메일을 못 받으셨나요?", new_confirmation_path(resource_name), class: 'btn btn-outline-primary btn-md' %><br />
+  <%= link_to "가입 완료를 위한 이메일을 받지 못하셨나요?", new_confirmation_path(resource_name), class: 'btn btn-outline-primary btn-md' %><br />
 <% end %>
 
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>

@@ -60,6 +60,7 @@ en:
               taken: "이미 등록 되어있는 이메일입니다."
               blank: "이메일은 필수 항목입니다."
               invalid: "예) example@example.com"
+              not_found: "등록되어 있지 않은 이메일입니다."
             password:
               too_short: "비밀번호가 너무 짧습니다."
               blank: "비밀번호는 필수 항목입니다."

@@ -1,5 +1,4 @@
 <h2>가입</h2>
-
 <%= render "devise/shared/links" %>
 
 <hr>
@@ -10,18 +9,19 @@
     <%= f.input :nickname, label: '닉네임',
                 required: true, 
                 autofocus: true, 
-                hint: ("")
+                hint: ("닉네임은 언제든지 바꾸실 수 있습니다.")
                  %>
     <%= f.input :email, label: '이메일',
                 required: true,
-                hint: ("로그인 할 때 사용 하실 이메일을 입력해 주세요. 입력하신 이메일로 가입 완료 메시지가 전송됩니다."),
+                hint: ("로그인 할 때 사용 하실 이메일을 입력해 주세요. 입력하신 이메일로 가입 완료 메시지가 전송됩니다. 입력하신 이메일은 바꾸실 수 없습니다."),
                 input_html: { autocomplete: "email" } %>
     <%= f.input :password, label: '비밀번호',
                 required: true,
-                hint: ("#{@minimum_password_length}자 이상 입력해주세요." if @minimum_password_length),
+                hint: ("#{@minimum_password_length}자 이상 입력해주세요. 비밀번호는 언제든지 바꾸실 수 있습니다." if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation, label: '비밀번호 재입력',
                 required: true,
+                hint: ("비밀번호를 한번 더 입력해주세요."),
                 input_html: { autocomplete: "new-password" } %>
   </div>
 
