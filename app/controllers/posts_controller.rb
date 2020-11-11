@@ -5,8 +5,8 @@ class PostsController < ApplicationController
   def index
     @categories = Category.all
     
-    if(params.has_key?(:category_name) && params[:category_name] != "All")
-      # puts params[:category_name]
+    if(params.has_key?(:category_name) && params[:category_name] != "모든 글")
+      puts params[:category_name]
       category_id = Category.where(name: params[:category_name])
       @posts = Post.where(category_id: category_id).order(created_at: :desc).page(params[:page])
     else
